@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#ACC8E5;
+}
+main {
+    color: rgba(0, 0, 0, 0.756)
+}
+#maintitle {
+    color:#112A46;
+}
+footer {
+    color: #0e06f2;
+}
+
+nav {
+    color: rgb(5, 11, 23);
+}
+
+.black {
+    color:  #222;
+}
+
+.black {
+    color: #222;
+}
+
+#color-title {
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.color-list {
+    line-height: 1.6;
+}
+
+.emphasize {
+    color: #b22222;
+    font-weight: bold;
+}
+
+.de-emphasize {
+    color: #5F6B7A;
+    font-style:italic
+}
