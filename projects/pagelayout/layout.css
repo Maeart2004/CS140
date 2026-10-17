@@ -1,0 +1,92 @@
+body {
+    background-color:antiquewhite;
+    font-family:Arial, sans-serif;
+}
+
+#wrapper {
+    width:900px;
+    margin:auto;
+    background-color:white;
+    border:2px solid #1f4a87;
+    box-shadow:5px 5px 15px gray;
+}
+
+header {
+    height:180px;
+    background-image:url("ChocolateHills.jpg");
+    background-size:cover;
+    background-position:center;
+    background-origin:border-box;
+    background-clip:padding-box;
+    text-align:center;
+    padding-top:40px;
+}
+
+header h1 {
+    font-family:Georgia, serif;
+    font-size:38px;
+    font-weight:bold;
+    font-style:italic;
+    text-transform:uppercase;
+    text-shadow:2px 2px 5px black;
+    color:white;
+}
+
+nav {
+    background-color:#571d29;
+    padding:15px;
+    text-align:center;
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    margin:5px;
+    border-radius:5px;
+}
+
+nav a:hover {
+    background-color:gold;
+    color:black;
+}
+
+main {
+    padding:30px;
+    font-size:18px;
+    line-height:1.8;
+    overflow: auto;
+}
+
+#pic1 {
+    float:right;
+    width:280px;
+    margin-left:20px;
+    margin-bottom:15px;
+    padding:10px;
+    border:2px solid #1d3557;
+    border-radius:10px;
+    box-shadow:3px 3px 10px gray;
+}
+
+#pic1 img {
+    width:100%;
+    display: block;
+}
+
+figcaption {
+    text-align:center;
+    font-style:italic;
+}
+
+footer {
+    clear:both;
+    background-color:#1d3557;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+h2 {
+    text-align: center;
+}
