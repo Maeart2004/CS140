@@ -20,7 +20,8 @@ nav a {
     display:block;
     padding: 5px 20px;
     background-color: rgb(24, 181, 178);
-    color:azure
+    color:azure;
+    text-decoration: none;
 }
 
 nav a:hover {
