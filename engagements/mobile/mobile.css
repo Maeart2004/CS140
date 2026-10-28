@@ -19,8 +19,14 @@ nav {
 nav a {
     display:block;
     padding: 5px 20px;
-    background-color: rgb(48, 142, 148);
+    background-color: rgb(24, 181, 178);
     color:azure
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background-color: bisque;
+    color: rgb(44, 41, 41);
 }
 
 .mainrow {
@@ -65,6 +71,35 @@ main {
     border-radius: 5px;
     color: aqua;
 }
+
+@media ONLY screen AND (max-width: 680px) {
+   .mainrow {
+    flex-direction: column-reverse;
+    align-items: center;
+   } 
+
+   .sidebar {
+    width: 100%;
+   }
+
+   main {
+    width: 100%;
+   }
+
+   .card {
+    width: 95%;
+   }
+
+   nav {
+    flex-direction: column;
+   }
+
+   nav a {
+    border-bottom: 1px solid white;
+    padding: 15px 10px;
+   }
+}
+
 
 @media print {
     nav {
