@@ -4,6 +4,13 @@ body {
     background-color: rgb(140, 34, 54);
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -48,8 +55,8 @@ nav a:hover {
     display: flex;
     flex: 1;
     gap: 2rem;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1300px;
+    width: 95%;
     margin: 2rem auto;
     padding: 0 1.5rem;
 }
@@ -85,10 +92,6 @@ aside p {
       margin-bottom: 1rem;
       color: whitesmoke;
     }
-
-.table-container {
-    overflow-x: auto;
-}
 
 table {
     width: 100%;
