@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(240, 196, 196);
+    background-color: rgb(140, 34, 54);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(62, 4, 21);
+    color: antiquewhite;
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+  background-color: #ea3e4d;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #f0f1f7;
+  text-decoration: solid;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #170e13;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+main {
+    flex: 3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(242, 218, 216);
+}
+
+aside {
+    flex: 1;
+    background: rgb(242, 105, 142);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(49, 28, 28);
+    align-self: flex-start;
+}
+
+aside h2 {
+    font-size: 1.25rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 0.5rem;
+}
+
+aside p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgb(183, 180, 180);
+      margin-bottom: 1rem;
+      color: whitesmoke;
+    }
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+caption {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(62, 4, 21);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1rem;
+    border: 1px solid white;
+}
+
+td {
+    padding: 0.85rem 1rem;
+    border: 1px solid white;
+}
+
+tbody tr:nth-child(even) {
+      background-color: rgb(227, 105, 105);
+    }
+
+tbody tr:hover {
+      background-color: #f4ebec;
+    }
+
+footer {
+      color: whitesmoke;
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.875rem;
+      margin-top: auto;
+    }
+
+@media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside {
+        order: 2;
+      }
+
+      main {
+        order: 1;
+      }
+    }
