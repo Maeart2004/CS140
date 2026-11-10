@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <header>
+        <h1>Legaspi's Web Design Site</h1>
+    </header>
+    <main>
+        <form action="formprocessing.html" method="get">
+            <div class="form-row">
+                <label for="personname">Full Name</label>
+                <input type="text" id="personname" name="fullname" placeholder="Full Name">
+            </div>           
+            <div class="form-row">    
+                <label for="email">Email</label>    
+                <input type="email" name="email" id="email" placeholder="name@example.com">
+            </div>           
+            <div class="form-row">
+                <label for="password">Password</label>  
+                <input type="password" name="pass" id="password">
+            </div>
+            <br>
+            <div class="form-row">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+            </div>
+            <br>
+            <fieldset>
+                <legend>Select your preferred contact method:</legend>
+                <input type="radio" id="contact-email" name="contact" value="email">
+                <label for="contact-email">Email</label><br>
+                <input type="radio" id="contact-phone" name="contact" value="phone">
+                <label for="contact-phone">Phone</label><br>
+                <input type="radio" id="contact-sms" name="contact" value="sms">
+                <label for="contact-sms">SMS</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Select your hobbies:</legend>
+                <input type="checkbox" id="hobby-reading" name="hobbies" value="reading">
+                <label for="hobby-reading">Reading</label><br>
+                <input type="checkbox" id="hobby-sports" name="hobbies" value="sports">
+                <label for="hobby-sports">Sports</label>
+            </fieldset>
+            <br>
+            <label for="feedback">Your feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50">Enter your comments here...</textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p>The form tag has an "action" attribute. What does it do?</p>
+        <p>-The action attribute specifies the URL or file path, for example, formprocessing.html. Where the browser sends the data form when the user clicks submit button</p>
+        <p>The form tag has a "method" attribute. What does it do?</p>
+        <p>-The method attribute specifies the HTTP method (GET or POST) the browser uses to send the data form to the server.</p>
+        <p>What is the difference between a "POST" and a "GET"?</p>
+        <p>-GET appends form data directly to the URL query string. It is usually visible in the address bar which is not secure for sensitive data like passwords. On the other hand, POST usually sends form data hidden inside the HTTP request body which helps secure for sensitive data.</p>
+        <p>How do you fill in a form control with a pre-set value, and how is that different from a placeholder? Answer for each of these: text box, textarea, select box, checkbox, and radio button.</p>
+        <p>-Difference: A pre-set value is actual data that gets submitted to the server if left unchanged. A placeholder is a temporary visual hint that disappears as soon as the user types, and it is not submitted. 
+            Text box: Pre-set via the value attribute (value="Default"), hint via the placeholder attribute (placeholder="Hint"). 
+            Textarea: Pre-set by placing text between the tags (<textarea>Default text</textarea>), hint via the placeholder attribute. 
+            Select box: Pre-set by adding the selected attribute to a specific option (&lt;option selected&gt;Option&lt;/option&gt;)
+            Checkbox: Pre-set by adding the checked attribute (<input type="checkbox" checked>), placeholders do not apply. Radio button: Pre-set by adding the checked attribute (<input type="radio" checked>), placeholders do not apply.
+        </p>
+        <p>List all the form controls that HTML5 added. Which ones did you put in your form?</p>
+        <p>-All HTML5 input types added: email, url, tel, number, range, date, month, week, time, datetime-local, color, and search. I included the email control in my form.</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Arthemae Legaspi</p>
+    </footer>
+</body>
+</html>
