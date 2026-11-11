@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
     <header>
         <h1>Legaspi's Web Design Site</h1>
     </header>
     <main>
-        <form action="formprocessing.html" method="get">
-            <div class="form-row">
-                <label for="personname">Full Name</label>
-                <input type="text" id="personname" name="fullname" placeholder="Full Name">
-            </div>           
-            <div class="form-row">    
-                <label for="email">Email</label>    
-                <input type="email" name="email" id="email" placeholder="name@example.com">
-            </div>           
-            <div class="form-row">
-                <label for="password">Password</label>  
-                <input type="password" name="pass" id="password">
-            </div>
-            <br>
-            <div class="form-row">
-                <label for="country">Country:</label>
-                <select id="country" name="country">
-                    <option value="us">United States</option>
-                    <option value="ca">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                </select>
-            </div>
-            <br>
+        <form action="formprocessing.html" method="post">
+            <fieldset>
+                <legend>Account Information</legend>
+                <div class="form-row">
+                    <label for="personname">Full Name</label>
+                    <input type="text" id="personname" name="fullname" placeholder="Full Name">
+                </div>            
+                <div class="form-row">    
+                    <label for="email">Email</label>    
+                    <input type="email" name="email" id="email" placeholder="name@example.com">
+                </div>    
+                <div class="form-row">    
+                    <label for="bdate">Birthday</label>    
+                    <input type="date" name="bdate" id="bdate">
+                </div>       
+                <div class="form-row">
+                    <label for="password">Password</label>  
+                    <input type="password" name="pass" id="password">
+                </div>
+                <div class="form-row">
+                    <label for="state">State</label>  
+                    <input type="text" name="state" id="state" placeholder="State">
+                </div>
+                <div class="form-row">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+                <div class="check-row">
+                    <label><input type="checkbox" name="remember"> Remember Me?</label>  
+                </div>
+            </fieldset>
             <fieldset>
                 <legend>Select your preferred contact method:</legend>
                 <input type="radio" id="contact-email" name="contact" value="email">
@@ -42,35 +55,44 @@
                 <input type="radio" id="contact-sms" name="contact" value="sms">
                 <label for="contact-sms">SMS</label>
             </fieldset>
-            <br>
             <fieldset>
-                <legend>Select your hobbies:</legend>
-                <input type="checkbox" id="hobby-reading" name="hobbies" value="reading">
-                <label for="hobby-reading">Reading</label><br>
-                <input type="checkbox" id="hobby-sports" name="hobbies" value="sports">
-                <label for="hobby-sports">Sports</label>
+                <legend>Select your Gender:</legend>
+                <input type="radio" id="gender-male" name="gender" value="male">
+                <label for="gender-male">Male</label><br>
+                <input type="radio" id="gender-female" name="gender" value="female">
+                <label for="gender-female">Female</label>
             </fieldset>
-            <br>
-            <label for="feedback">Your feedback:</label><br>
-            <textarea id="feedback" name="feedback" rows="4" cols="50">Enter your comments here...</textarea>
-            <br><br>
-            <button type="submit">Submit</button>
+            <div class="form-row">
+                <label for="comments">Comments</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50">Enter your comments here...</textarea>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Sign Up">
+            </div>
         </form>
-        <p>The form tag has an "action" attribute. What does it do?</p>
-        <p>-The action attribute specifies the URL or file path, for example, formprocessing.html. Where the browser sends the data form when the user clicks submit button</p>
-        <p>The form tag has a "method" attribute. What does it do?</p>
-        <p>-The method attribute specifies the HTTP method (GET or POST) the browser uses to send the data form to the server.</p>
-        <p>What is the difference between a "POST" and a "GET"?</p>
-        <p>-GET appends form data directly to the URL query string. It is usually visible in the address bar which is not secure for sensitive data like passwords. On the other hand, POST usually sends form data hidden inside the HTTP request body which helps secure for sensitive data.</p>
-        <p>How do you fill in a form control with a pre-set value, and how is that different from a placeholder? Answer for each of these: text box, textarea, select box, checkbox, and radio button.</p>
-        <p>-Difference: A pre-set value is actual data that gets submitted to the server if left unchanged. A placeholder is a temporary visual hint that disappears as soon as the user types, and it is not submitted. 
-            Text box: Pre-set via the value attribute (value="Default"), hint via the placeholder attribute (placeholder="Hint"). 
-            Textarea: Pre-set by placing text between the tags (<textarea>Default text</textarea>), hint via the placeholder attribute. 
-            Select box: Pre-set by adding the selected attribute to a specific option (&lt;option selected&gt;Option&lt;/option&gt;)
-            Checkbox: Pre-set by adding the checked attribute (<input type="checkbox" checked>), placeholders do not apply. Radio button: Pre-set by adding the checked attribute (<input type="radio" checked>), placeholders do not apply.
-        </p>
-        <p>List all the form controls that HTML5 added. Which ones did you put in your form?</p>
-        <p>-All HTML5 input types added: email, url, tel, number, range, date, month, week, time, datetime-local, color, and search. I included the email control in my form.</p>
+        <section class="assignment-answers">
+            <h2>Form Review Questions & Answers</h2>
+            <p><strong>The form tag has an "action" attribute. What does it do?</strong></p>
+            <p>- The action attribute specifies the URL or file path (for example, <code>formprocessing.html</code>) where the browser sends the form data when the user clicks the submit button.</p>        
+            <p><strong>The form tag has a "method" attribute. What does it do?</strong></p>
+            <p>- The method attribute specifies the HTTP method (GET or POST) the browser uses to send the form data to the server.</p>
+            <p><strong>What is the difference between a "POST" and a "GET"?</strong></p>
+            <p>- GET appends form data directly to the URL query string, making it visible in the address bar (less secure for sensitive data like passwords). POST sends form data hidden inside the HTTP request body, which is much more secure for sensitive information.</p>       
+            <p><strong>How do you fill in a form control with a pre-set value, and how is that different from a placeholder?</strong></p>
+            <p>- Difference: A pre-set value is actual data submitted to the server if unchanged. A placeholder is a temporary visual hint that disappears when typing and is not submitted.<br>
+                &bull; <strong>Text box:</strong> Pre-set via <code>value="Default"</code>, hint via <code>placeholder="Hint"</code>.<br>
+                &bull; <strong>Textarea:</strong> Pre-set by placing text between tags (<code>&lt;textarea&gt;Default text&lt;/textarea&gt;</code>), hint via placeholder.<br>
+                &bull; <strong>Select box:</strong> Pre-set by adding the <code>selected</code> attribute to an option (<code>&lt;option selected&gt;Option&lt;/option&gt;</code>).<br>
+                &bull; <strong>Checkbox/Radio:</strong> Pre-set by adding the <code>checked</code> attribute (<code>checked</code>).</p>
+            <p><strong>List all the form controls that HTML5 added. Which ones did you put in your form?</strong></p>
+            <p>- HTML5 input types added: email, url, tel, number, range, date, month, week, time, datetime-local, color, and search. I included the <strong>email</strong> and <strong>date</strong> controls in my form.</p>  
+            <p><strong>What are different ways to style your form?</strong></p>    
+            <p>- Inline, internal, external CSS, as well as modern layout models like Flexbox and Grid.</p>          
+            <p><strong>Why does the professor like to use flex?</strong></p>
+            <p>- It makes aligning elements and responsive page flow much easier and cleaner.</p>           
+            <p><strong>What makes for a good mobile form?</strong></p>
+            <p>- Large tap targets, readable font sizes, appropriate input keyboards (like email or numeric), and clear spacing so users can easily navigate on smaller screens.</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2026 Arthemae Legaspi</p>

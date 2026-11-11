@@ -1,4 +1,84 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+.form-row, .check-row {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+fieldset {
+    background-color: rgb(148, 104, 49);
+    border: thin solid black;
+    box-shadow: 3px 3px 3px rgb(141, 141, 90);
+    margin-bottom: 15px;
+    padding: 15px;
+    color: white;
+}
+
+legend {
+    background-color: rgb(255, 231, 111);
+    color: black;
+    padding: 4px 10px;
+    border: thin solid black;
+    font-weight: bold;
+}
+
+.form-row label, .spacer {
+    width: 150px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.form-row input:not([type="submit"]),
+.form-row select,
+textarea {
+    padding: 6px;
+    background-color: rgb(230, 234, 228); 
+    color: black;
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+textarea:focus {
+    background-color: bisque;
+    outline: none;
+}
+
+.form-row input[type="submit"] {
+    padding: 10px 20px;
+    background-color: rgb(67, 55, 3);
+    color: rgb(242, 214, 4);
+    font-weight: bold;
+    border: thin solid black;
+    cursor: pointer;
+}
+
+.form-row input[type="submit"]:hover {
+    background-color: rgb(237, 208, 66);
+    color: black;
+}
+
+@media only screen and (max-width: 500px) {
+    .form-row, .check-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row label {
+        text-align: left;
+        width: auto;
+    }
+
+    .spacer {
+        display: none;
+    }
+}
