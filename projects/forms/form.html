@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <header>
+        <h1>Legaspi's Web Design Site</h1>
+    </header>
+    <main>
+        <form action="formprocessing.html" method="post">
+            <fieldset>
+                <legend>Account Information</legend>
+                <div class="form-row">
+                    <label for="personname">Full Name</label>
+                    <input type="text" id="personname" name="fullname" placeholder="Full Name">
+                </div>            
+                <div class="form-row">    
+                    <label for="email">Email</label>    
+                    <input type="email" name="email" id="email" placeholder="name@example.com">
+                </div>    
+                <div class="form-row">    
+                    <label for="bdate">Birthday</label>    
+                    <input type="date" name="bdate" id="bdate">
+                </div>       
+                <div class="form-row">
+                    <label for="password">Password</label>  
+                    <input type="password" name="pass" id="password">
+                </div>
+                <div class="form-row">
+                    <label for="state">State</label>  
+                    <input type="text" name="state" id="state" placeholder="State">
+                </div>
+                <div class="form-row">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+                <div class="check-row">
+                    <label><input type="checkbox" name="remember"> Remember Me?</label>  
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Select your preferred contact method:</legend>
+                <input type="radio" id="contact-email" name="contact" value="email">
+                <label for="contact-email">Email</label><br>
+                <input type="radio" id="contact-phone" name="contact" value="phone">
+                <label for="contact-phone">Phone</label><br>
+                <input type="radio" id="contact-sms" name="contact" value="sms">
+                <label for="contact-sms">SMS</label>
+            </fieldset>
+            <fieldset>
+                <legend>Select your Gender:</legend>
+                <input type="radio" id="gender-male" name="gender" value="male">
+                <label for="gender-male">Male</label><br>
+                <input type="radio" id="gender-female" name="gender" value="female">
+                <label for="gender-female">Female</label>
+            </fieldset>
+            <div class="form-row">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 Arthemae Legaspi</p>
+    </footer>
+</body>
+</html>
