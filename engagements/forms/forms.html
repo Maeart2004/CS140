@@ -11,7 +11,7 @@
         <h1>Legaspi's Web Design Site</h1>
     </header>
     <main>
-        <form action="formprocessing.html" method="post">
+        <form action="formprocessing.html" method="post" id="myForm">
             <fieldset>
                 <legend>Account Information</legend>
                 <div class="form-row">
@@ -120,7 +120,7 @@
             }
 
             if (!age | | age <18) {
-                alert("You needto be 18");
+                alert("You need to be 18");
                 return;
             }
 
