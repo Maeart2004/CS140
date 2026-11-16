@@ -28,7 +28,7 @@
                 </div>       
                 <div class="form-row">
                     <label for="password">Password</label>  
-                    <input type="password" name="pass" id="password">
+                    <input type="password" name="pass" id="pass">
                 </div>
                 <div class="form-row">
                     <label for="state">State</label>  
@@ -92,10 +92,47 @@
             <p>- It makes aligning elements and responsive page flow much easier and cleaner.</p>           
             <p><strong>What makes for a good mobile form?</strong></p>
             <p>- Large tap targets, readable font sizes, appropriate input keyboards (like email or numeric), and clear spacing so users can easily navigate on smaller screens.</p>
-        </section>
+        <p><strong>What is JavaScript? How did it get its name?</strong></p>
+        <p>-It's a programming language. It runs inside the web browser and make it interactive. </p>
+        <p><strong>What are the two ways you can run JavaScript?</strong></p>
+        <p>-You can run it in Browser called DOM or non-browser called node .js</p>
+        <p><strong>What is jQuery? Is it still popular today?</strong></p>
+        <p><strong>What is the most popular front-end js library today?</strong></p>
+        <p><strong>How does your code prevent the form from being submitted? Why do we need to prevent it?</strong></p>
+    </section>
     </main>
     <footer>
         <p>&copy; 2026 Arthemae Legaspi</p>
     </footer>
+    <script>
+        document.getElementById('myForm').addEventListener('submit',function(event) {
+            event.preventDefault(); 
+            alert ("Form Submitted");
+    
+            const fullname = document.getElementsById('fullname').value;
+            const email = document.getElementsById('email').value;
+            const password = document.getElementById('pass').value;
+            const age = document.getElementById('bdate').value;
+
+            if (!fullname | | !email) {
+                alert("You need a name and email.");
+                return;
+            }
+
+            if (!age | | age <18) {
+                alert("You needto be 18");
+                return;
+            }
+
+            const formData = {
+                name: fullname,
+                email: email,
+                password: password,
+                age: age
+            };
+
+            console.log(formData);
+        });
+    </script>
 </body>
 </html>
