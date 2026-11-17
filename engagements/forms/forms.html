@@ -15,8 +15,8 @@
             <fieldset>
                 <legend>Account Information</legend>
                 <div class="form-row">
-                    <label for="personname">Full Name</label>
-                    <input type="text" id="personname" name="fullname" placeholder="Full Name">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name">
                 </div>            
                 <div class="form-row">    
                     <label for="email">Email</label>    
@@ -27,7 +27,7 @@
                     <input type="date" name="bdate" id="bdate">
                 </div>       
                 <div class="form-row">
-                    <label for="password">Password</label>  
+                    <label for="pass">Password</label>  
                     <input type="password" name="pass" id="pass">
                 </div>
                 <div class="form-row">
@@ -97,8 +97,11 @@
         <p><strong>What are the two ways you can run JavaScript?</strong></p>
         <p>-You can run it in Browser called DOM or non-browser called node .js</p>
         <p><strong>What is jQuery? Is it still popular today?</strong></p>
+        <p>-jQuery is a fast, small, and feature-rich JavaScript library created in 2006. It was designed to simplify HTML DOM tree traversal and manipulation, event handling, CSS animation, and Ajax requests by abstracting away inconsistencies across different web browsers. While developers rarely choose jQuery for brand-new single-page applications or complex product interfaces, it remains massively popular in legacy systems, enterprise apps, and the WordPress ecosystem.</p>
         <p><strong>What is the most popular front-end js library today?</strong></p>
+        <p>-React is indisputably the most popular front-end JavaScript library today. Developed and maintained by Meta (along with an extensive open-source community), it utilizes a component-based architecture and a virtual DOM to build interactive, dynamic user interfaces and single-page applications.</p>
         <p><strong>How does your code prevent the form from being submitted? Why do we need to prevent it?</strong></p>
+        <p>-React is indisputably the most popular front-end JavaScript library today. Developed and maintained by Meta (along with an extensive open-source community), it utilizes a component-based architecture and a virtual DOM to build interactive, dynamic user interfaces and single-page applications. (In jQuery, you would achieve the exact same behavior using event.preventDefault() or by returning false at the end of the event handler). We prevent default form submission to stop the browser from reloading the page, allowing you to handle the data with JavaScript instead. To async requests, client-side validation, state preservation.</p>
     </section>
     </main>
     <footer>
@@ -109,17 +112,17 @@
             event.preventDefault(); 
             alert ("Form Submitted");
     
-            const fullname = document.getElementsById('fullname').value;
-            const email = document.getElementsById('email').value;
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
             const password = document.getElementById('pass').value;
             const age = document.getElementById('bdate').value;
 
-            if (!fullname | | !email) {
+            if (!fullname || !email) {
                 alert("You need a name and email.");
                 return;
             }
 
-            if (!age | | age <18) {
+            if (!age || age <18) {
                 alert("You need to be 18");
                 return;
             }
