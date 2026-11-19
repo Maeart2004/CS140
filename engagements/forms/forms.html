@@ -11,6 +11,7 @@
         <h1>Legaspi's Web Design Site</h1>
     </header>
     <main>
+        <div id="message"></div>
         <form action="formprocessing.html" method="post" id="myForm">
             <fieldset>
                 <legend>Account Information</legend>
@@ -92,38 +93,59 @@
             <p>- It makes aligning elements and responsive page flow much easier and cleaner.</p>           
             <p><strong>What makes for a good mobile form?</strong></p>
             <p>- Large tap targets, readable font sizes, appropriate input keyboards (like email or numeric), and clear spacing so users can easily navigate on smaller screens.</p>
-        <p><strong>What is JavaScript? How did it get its name?</strong></p>
-        <p>-It's a programming language. It runs inside the web browser and make it interactive. </p>
-        <p><strong>What are the two ways you can run JavaScript?</strong></p>
-        <p>-You can run it in Browser called DOM or non-browser called node .js</p>
-        <p><strong>What is jQuery? Is it still popular today?</strong></p>
-        <p>-jQuery is a fast, small, and feature-rich JavaScript library created in 2006. It was designed to simplify HTML DOM tree traversal and manipulation, event handling, CSS animation, and Ajax requests by abstracting away inconsistencies across different web browsers. While developers rarely choose jQuery for brand-new single-page applications or complex product interfaces, it remains massively popular in legacy systems, enterprise apps, and the WordPress ecosystem.</p>
-        <p><strong>What is the most popular front-end js library today?</strong></p>
-        <p>-React is indisputably the most popular front-end JavaScript library today. Developed and maintained by Meta (along with an extensive open-source community), it utilizes a component-based architecture and a virtual DOM to build interactive, dynamic user interfaces and single-page applications.</p>
-        <p><strong>How does your code prevent the form from being submitted? Why do we need to prevent it?</strong></p>
-        <p>-React is indisputably the most popular front-end JavaScript library today. Developed and maintained by Meta (along with an extensive open-source community), it utilizes a component-based architecture and a virtual DOM to build interactive, dynamic user interfaces and single-page applications. (In jQuery, you would achieve the exact same behavior using event.preventDefault() or by returning false at the end of the event handler). We prevent default form submission to stop the browser from reloading the page, allowing you to handle the data with JavaScript instead. To async requests, client-side validation, state preservation.</p>
-    </section>
+            <p><strong>What is JavaScript? How did it get its name?</strong></p>
+            <p>- It's a programming language. It runs inside the web browser and makes it interactive.</p>
+            <p><strong>What are the two ways you can run JavaScript?</strong></p>
+            <p>- You can run it in a browser (working with the DOM) or outside the browser using a runtime like Node.js.</p>
+            <p><strong>What is jQuery? Is it still popular today?</strong></p>
+            <p>- jQuery is a fast, small, and feature-rich JavaScript library created in 2006. It was designed to simplify HTML DOM tree traversal and manipulation, event handling, CSS animation, and Ajax requests by abstracting away inconsistencies across different web browsers. While developers rarely choose jQuery for brand-new single-page applications or complex product interfaces, it remains massively popular in legacy systems, enterprise apps, and the WordPress ecosystem.</p>
+            <p><strong>What is the most popular front-end js library today?</strong></p>
+            <p>- React is indisputably the most popular front-end JavaScript library today. Developed and maintained by Meta (along with an extensive open-source community), it utilizes a component-based architecture and a virtual DOM to build interactive, dynamic user interfaces and single-page applications.</p>
+            <p><strong>How does your code prevent the form from being submitted? Why do we need to prevent it?</strong></p>
+            <p>- The script calls <code>event.preventDefault()</code> inside the form's <code>submit</code> event listener (in jQuery, you can also use <code>event.preventDefault()</code> or return <code>false</code>). We prevent default submission so the browser doesn't reload the page, letting JavaScript run client-side validation, preserve state, and send data asynchronously.</p>
+            <p><strong>What is AJAX?</strong></p>
+            <p>- AJAX lets a web page send and receive data from a server in the background without reloading the whole page. In this form, it uses <code>XMLHttpRequest</code> to fetch <code>submit.json</code> and display the reply.</p>
+            <p><strong>Why do you put your JS Code in a separate file?</strong></p>
+            <p>- It keeps HTML clean and easier to maintain, lets you reuse the script across multiple pages, and allows the browser to cache the file.</p>
+            <p><strong>How do you use the inspector (DevTools) to debug your JavaScript? How do you find the line number of an error?</strong></p>
+            <p>- Open DevTools (<code>F12</code> or right-click and select <strong>Inspect</strong>) and check the <strong>Console</strong> tab for errors and <code>console.log()</code> output. The exact file name and line number appear on the right side of each red error message, and you can click it to jump straight to that line in the <strong>Sources</strong> tab.</p>
+            <p><strong>Do your form and fields have the same ids that your JavaScript uses? Does the Console show any errors? List your ids, and fix any errors before you submit.</strong></p>
+            <p>- Yes, all HTML elements match the IDs used in the JavaScript, and the Console shows no errors. The matching IDs are: <code>myForm</code>, <code>fullname</code>, <code>email</code>, <code>pass</code>, <code>bdate</code>, and <code>message</code>.</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2026 Arthemae Legaspi</p>
     </footer>
     <script>
-        document.getElementById('myForm').addEventListener('submit',function(event) {
-            event.preventDefault(); 
-            alert ("Form Submitted");
-    
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Form Submitted");
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
             const password = document.getElementById('pass').value;
-            const age = document.getElementById('bdate').value;
+            const bdate = document.getElementById('bdate').value;
 
             if (!fullname || !email) {
                 alert("You need a name and email.");
                 return;
             }
 
-            if (!age || age <18) {
-                alert("You need to be 18");
+            if (!bdate) {
+                alert("You need to enter your birthday.");
+                return;
+            }
+
+            const birthDate = new Date(bdate + "T00:00:00");
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                alert("You need to be at least 18 years old.");
                 return;
             }
 
@@ -135,6 +157,20 @@
             };
 
             console.log(formData);
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "submit.json", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const message = document.getElementById('message');
+                    const response = JSON.parse(xhr.responseText);
+                    message.textContent = response.message;
+                } else if (xhr.readyState === 4) {
+                    alert('Error submitting form.');
+                }
+            };
+            xhr.send(JSON.stringify(formData));
+            alert(`Success: ${fullname}`);
         });
     </script>
 </body>
