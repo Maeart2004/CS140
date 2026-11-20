@@ -82,3 +82,11 @@ textarea:focus {
         display: none;
     }
 }
+
+#message {
+    font-style: oblique;
+    color: red;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+}
